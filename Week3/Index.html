@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>College Fest Event Registration</title>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+
+<style>
+    * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+        font-family: 'Poppins', sans-serif;
+    }
+
+    body {
+        background: linear-gradient(135deg, #0f0f0f, #1c1c1c);
+        color: #fff;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        min-height: 100vh;
+        padding: 20px;
+    }
+
+    .container {
+        background: #181818;
+        padding: 40px;
+        border-radius: 12px;
+        width: 100%;
+        max-width: 520px;
+        box-shadow: 0 0 25px rgba(0,0,0,0.6);
+    }
+
+    h1 {
+        text-align: center;
+        margin-bottom: 10px;
+        font-weight: 600;
+        letter-spacing: 1px;
+    }
+
+    p.subtitle {
+        text-align: center;
+        color: #aaa;
+        margin-bottom: 30px;
+        font-size: 0.95rem;
+    }
+
+    label {
+        display: block;
+        margin-bottom: 6px;
+        font-size: 0.85rem;
+        color: #ccc;
+    }
+
+    input, select, textarea {
+        width: 100%;
+        padding: 12px;
+        margin-bottom: 18px;
+        border-radius: 6px;
+        border: 1px solid #333;
+        background: #111;
+        color: #fff;
+        font-size: 0.9rem;
+        transition: 0.2s ease;
+    }
+
+    input:focus, select:focus, textarea:focus {
+        outline: none;
+        border-color: #00bcd4;
+        box-shadow: 0 0 6px #00bcd455;
+    }
+
+    textarea {
+        resize: none;
+        height: 90px;
+    }
+
+    .row {
+        display: flex;
+        gap: 12px;
+    }
+
+    .row > div {
+        flex: 1;
+    }
+
+    button {
+        width: 100%;
+        padding: 14px;
+        border: none;
+        border-radius: 6px;
+        background: linear-gradient(135deg, #00bcd4, #0097a7);
+        color: white;
+        font-size: 1rem;
+        font-weight: 600;
+        cursor: pointer;
+        transition: 0.3s ease;
+    }
+
+    button:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 8px 18px rgba(0, 188, 212, 0.3);
+    }
+
+    .footer-note {
+        text-align: center;
+        margin-top: 18px;
+        font-size: 0.75rem;
+        color: #777;
+    }
+
+    @media(max-width: 500px) {
+        .row {
+            flex-direction: column;
+        }
+    }
+</style>
+</head>
+<body>
+
+<div class="container">
+    <h1>College Fest 2026</h1>
+    <p class="subtitle">Event Registration Form</p>
+
+    <form>
+        <label>Full Name</label>
+        <input type="text" placeholder="Enter your full name" required>
+
+        <div class="row">
+            <div>
+                <label>Email Address</label>
+                <input type="email" placeholder="example@email.com" required>
+            </div>
+            <div>
+                <label>Phone Number</label>
+                <input type="tel" placeholder="10-digit mobile number" required>
+            </div>
+        </div>
+
+        <label>College / Institution Name</label>
+        <input type="text" placeholder="Your college name" required>
+
+        <label>Select Event</label>
+        <select required>
+            <option value="">-- Choose an Event --</option>
+            <option>Dance Competition</option>
+            <option>Music Battle</option>
+            <option>Hackathon</option>
+            <option>Photography Contest</option>
+            <option>Drama / Theatre</option>
+        </select>
+
+        <label>Team Size (if applicable)</label>
+        <input type="number" min="1" max="10" placeholder="Enter number of participants">
+
+        <label>Additional Notes</label>
+        <textarea placeholder="Any special requirements or information..."></textarea>
+
+        <button type="submit">Register Now</button>
+    </form>
+
+    <div class="footer-note">
+        © 2026 College Fest समिति | All Rights Reserved
+    </div>
+</div>
+
+</body>
+</html>
