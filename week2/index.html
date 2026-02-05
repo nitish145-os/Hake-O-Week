@@ -25,52 +25,68 @@ header {
     color: white;
     text-align: center;
 }
-header h1 {
-    font-size: 3rem;
-    letter-spacing: 2px;
-}
-header p {
-    font-weight: 300;
-    margin-top: 10px;
-}
+header h1 { font-size: 3rem; letter-spacing: 2px; }
+header p { font-weight: 300; margin-top: 10px; }
 
-/* GENERAL SECTION */
-.section {
+/* LIGHT SECTIONS */
+.section-light {
     padding: 60px 20px;
     max-width: 1100px;
     margin: auto;
 }
 
-.section h2 {
+.about {
+    background: #e4e4e4;
+    text-align: center;
+    border-radius: 10px;
+    padding: 40px 25px;
+    line-height: 1.6;
+}
+
+/* DARK SECTION WRAPPER */
+.dark-area {
+    background: #1c1c1c;
+    color: #eee;
+    padding-bottom: 60px;
+}
+
+/* SECTION TITLES */
+h2 {
     text-align: center;
     font-size: 2.2rem;
     margin-bottom: 10px;
 }
-
-.section .subtitle {
+.subtitle {
     text-align: center;
-    color: #666;
+    color: #777;
     margin-bottom: 40px;
 }
+.dark-area .subtitle { color: #aaa; }
 
-/* MENU CARD STYLE */
+/* MENU CARDS */
 .menu-card {
     background: white;
     padding: 30px;
     border-radius: 10px;
     box-shadow: 0 4px 15px rgba(0,0,0,0.05);
 }
+.dark-area .menu-card {
+    background: #2a2a2a;
+    box-shadow: none;
+}
 
+/* DISH ROW */
 .dish {
     display: flex;
     justify-content: space-between;
     padding: 12px 0;
     border-bottom: 1px solid #eee;
 }
+.dark-area .dish { border-color: #333; }
 .dish:last-child { border-bottom: none; }
 
 .name { font-weight: 500; }
-.price { font-weight: 700; color: #444; }
+.price { font-weight: 700; }
 
 /* PHOTO GRID */
 .photos {
@@ -81,30 +97,19 @@ header p {
 }
 .photos img {
     width: 100%;
-    height: 130px;
+    height: 140px;
     object-fit: cover;
     border-radius: 8px;
 }
 
-/* ABOUT SECTION */
-.about {
-    background: #e8e8e8;
-    text-align: center;
-    border-radius: 10px;
-    padding: 40px 25px;
-    line-height: 1.6;
-}
-
 /* INFO STRIP */
 .info-strip {
-    background: #2e2e2e;
-    color: #ddd;
+    background: #111;
+    color: #ccc;
     padding: 35px 20px;
     text-align: center;
 }
-.info-strip div {
-    margin: 8px 0;
-}
+.info-strip div { margin: 8px 0; }
 
 /* FOOTER */
 footer {
@@ -129,57 +134,70 @@ footer {
     </div>
 </header>
 
-<section class="section">
+<section class="section-light">
     <div class="about">
         <h2>Welcome to Our Kitchen</h2>
-        <p>At Delicious Bistro, we combine traditional recipes with modern flavors. Every dish is crafted with care, using fresh and locally sourced ingredients to give you a memorable dining experience.</p>
+        <p>We blend traditional flavors with modern culinary techniques, serving handcrafted dishes made from fresh, locally sourced ingredients.</p>
     </div>
 </section>
 
-<section class="section">
+<!-- DARK HALF STARTS -->
+<div class="dark-area">
+
+<section class="section-light">
     <h2>Starters</h2>
     <p class="subtitle">Light bites to begin your meal</p>
     <div class="menu-card">
         <div class="dish"><span class="name">Bruschetta</span><span class="price">₹220</span></div>
+        <div class="dish"><span class="name">Stuffed Mushrooms</span><span class="price">₹260</span></div>
         <div class="dish"><span class="name">Calamari Fritti</span><span class="price">₹350</span></div>
         <div class="dish"><span class="name">Garlic Parmesan Fries</span><span class="price">₹180</span></div>
     </div>
     <div class="photos">
         <img src="https://images.unsplash.com/photo-1600891964599-f61ba0e24092?auto=format&fit=crop&w=800&q=80">
+        <img src="https://images.unsplash.com/photo-1544025162-d76694265947?auto=format&fit=crop&w=800&q=80">
         <img src="https://images.unsplash.com/photo-1568051243858-96812c19bed0?auto=format&fit=crop&w=800&q=80">
         <img src="https://images.unsplash.com/photo-1552332386-f8dd00dc0f12?auto=format&fit=crop&w=800&q=80">
     </div>
 </section>
 
-<section class="section">
+<section class="section-light">
     <h2>Main Courses</h2>
     <p class="subtitle">Hearty and satisfying dishes</p>
     <div class="menu-card">
-        <div class="dish"><span class="name">Grilled Chicken</span><span class="price">₹550</span></div>
+        <div class="dish"><span class="name">Grilled Chicken Steak</span><span class="price">₹550</span></div>
+        <div class="dish"><span class="name">BBQ Ribs</span><span class="price">₹620</span></div>
         <div class="dish"><span class="name">Penne Alfredo</span><span class="price">₹450</span></div>
         <div class="dish"><span class="name">Veggie Burger</span><span class="price">₹380</span></div>
+        <div class="dish"><span class="name">Margherita Pizza</span><span class="price">₹420</span></div>
     </div>
     <div class="photos">
         <img src="https://images.unsplash.com/photo-1606755962774-dcb87c36ff20?auto=format&fit=crop&w=800&q=80">
+        <img src="https://images.unsplash.com/photo-1604908177522-040fe6c10a3f?auto=format&fit=crop&w=800&q=80">
         <img src="https://images.unsplash.com/photo-1601924582973-4bafd5d3ef3d?auto=format&fit=crop&w=800&q=80">
         <img src="https://images.unsplash.com/photo-1550317138-10000687a72b?auto=format&fit=crop&w=800&q=80">
+        <img src="https://images.unsplash.com/photo-1548365328-8b8497b7f5b1?auto=format&fit=crop&w=800&q=80">
     </div>
 </section>
 
-<section class="section">
+<section class="section-light">
     <h2>Desserts</h2>
     <p class="subtitle">Sweet endings</p>
     <div class="menu-card">
         <div class="dish"><span class="name">Tiramisu</span><span class="price">₹280</span></div>
-        <div class="dish"><span class="name">Chocolate Brownie</span><span class="price">₹260</span></div>
+        <div class="dish"><span class="name">Chocolate Lava Cake</span><span class="price">₹300</span></div>
+        <div class="dish"><span class="name">Cheesecake</span><span class="price">₹290</span></div>
         <div class="dish"><span class="name">Gelato Trio</span><span class="price">₹300</span></div>
     </div>
     <div class="photos">
         <img src="https://images.unsplash.com/photo-1589710757056-1668f48a61a5?auto=format&fit=crop&w=800&q=80">
-        <img src="https://images.unsplash.com/photo-1600418175995-1d28c88e87d0?auto=format&fit=crop&w=800&q=80">
+        <img src="https://images.unsplash.com/photo-1605478371315-11c5b8f8a80b?auto=format&fit=crop&w=800&q=80">
+        <img src="https://images.unsplash.com/photo-1600891963935-c95cce1b60ab?auto=format&fit=crop&w=800&q=80">
         <img src="https://images.unsplash.com/photo-1563805042-7684f4a3d26f?auto=format&fit=crop&w=800&q=80">
     </div>
 </section>
+
+</div>
 
 <section class="info-strip">
     <div><strong>📍 Location:</strong> MG Road, City Center</div>
