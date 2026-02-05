@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Restaurant Menu</title>
+<!-- Google font -->
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;500;700&display=swap" rel="stylesheet">
+<style>
+  body {
+    margin: 0;
+    font-family: 'Montserrat', sans-serif;
+    color: #333;
+    background: #fff;
+  }
+  header {
+    background: url('https://images.unsplash.com/photo-1555992336-03a23c0e60f9?auto=format&fit=crop&w=1950&q=80') center/cover no-repeat;
+    height: 450px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    text-shadow: 0 2px 8px rgba(0,0,0,0.6);
+  }
+  header h1 {
+    font-size: 3rem;
+    letter-spacing: 2px;
+  }
+  .section {
+    padding: 60px 20px;
+    max-width: 1100px;
+    margin: auto;
+  }
+  .section h2 {
+    text-align: center;
+    font-size: 2.4rem;
+    margin-bottom: 20px;
+    position: relative;
+  }
+  .dish {
+    display: flex;
+    justify-content: space-between;
+    border-bottom: 1px solid #eee;
+    padding: 12px 0;
+    font-size: 1rem;
+  }
+  .dish .name {
+    font-weight: 500;
+  }
+  .dish .price {
+    font-weight: 700;
+  }
+  .category-desc {
+    text-align: center;
+    color: #555;
+    font-size: 0.95rem;
+    margin-bottom: 30px;
+  }
+  .photos {
+    display: grid;
+    grid-template-columns: repeat(auto-fit,minmax(180px,1fr));
+    gap: 12px;
+    margin-top: 30px;
+  }
+  .photos img {
+    width: 100%;
+    border-radius: 8px;
+    object-fit: cover;
+    height: 130px;
+  }
+  footer {
+    text-align: center;
+    padding: 18px;
+    font-size: 0.95rem;
+    color: #777;
+    background: #fafafa;
+  }
+  @media (max-width:600px){
+    header h1 { font-size:2.2rem; }
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <h1>Delicious Bistro</h1>
+</header>
+
+<section class="section" id="starters">
+  <h2>Starters</h2>
+  <p class="category-desc">Kick off your meal with light and fresh starters.</p>
+  <div class="dish"><span class="name">Bruschetta</span><span class="price">₹220</span></div>
+  <div class="dish"><span class="name">Calamari Fritti</span><span class="price">₹350</span></div>
+  <div class="dish"><span class="name">Garlic Parmesan Fries</span><span class="price">₹180</span></div>
+
+  <div class="photos">
+    <img src="https://images.unsplash.com/photo-1600891964599-f61ba0e24092?auto=format&fit=crop&w=800&q=80" alt="Bruschetta">
+    <img src="https://images.unsplash.com/photo-1568051243858-96812c19bed0?auto=format&fit=crop&w=800&q=80" alt="Calamari">
+    <img src="https://images.unsplash.com/photo-1552332386-f8dd00dc0f12?auto=format&fit=crop&w=800&q=80" alt="Fries">
+  </div>
+</section>
+
+<section class="section" id="mains" style="background:#f8f8f8;">
+  <h2>Main Courses</h2>
+  <p class="category-desc">Hearty mains crafted with flavor and love.</p>
+  <div class="dish"><span class="name">Grilled Chicken</span><span class="price">₹550</span></div>
+  <div class="dish"><span class="name">Penne Alfredo</span><span class="price">₹450</span></div>
+  <div class="dish"><span class="name">Veggie Burger</span><span class="price">₹380</span></div>
+
+  <div class="photos">
+    <img src="https://images.unsplash.com/photo-1606755962774-dcb87c36ff20?auto=format&fit=crop&w=800&q=80" alt="Grilled Chicken">
+    <img src="https://images.unsplash.com/photo-1601924582973-4bafd5d3ef3d?auto=format&fit=crop&w=800&q=80" alt="Penne Alfredo">
+    <img src="https://images.unsplash.com/photo-1550317138-10000687a72b?auto=format&fit=crop&w=800&q=80" alt="Veggie Burger">
+  </div>
+</section>
+
+<section class="section" id="desserts">
+  <h2>Desserts</h2>
+  <p class="category-desc">Sweet finales to complete your dining experience.</p>
+  <div class="dish"><span class="name">Tiramisu</span><span class="price">₹280</span></div>
+  <div class="dish"><span class="name">Chocolate Brownie</span><span class="price">₹260</span></div>
+  <div class="dish"><span class="name">Gelato Trio</span><span class="price">₹300</span></div>
+
+  <div class="photos">
+    <img src="https://images.unsplash.com/photo-1589710757056-1668f48a61a5?auto=format&fit=crop&w=800&q=80" alt="Tiramisu">
+    <img src="https://images.unsplash.com/photo-1600418175995-1d28c88e87d0?auto=format&fit=crop&w=800&q=80" alt="Brownie">
+    <img src="https://images.unsplash.com/photo-1563805042-7684f4a3d26f?auto=format&fit=crop&w=800&q=80" alt="Gelato">
+  </div>
+</section>
+
+<footer>
+  © 2026 Delicious Bistro – Menu & Prices<br>
+  Contact: +91 12345 67890 | Open: 11:00 AM – 10:00 PM
+</footer>
+
+</body>
+</html>
