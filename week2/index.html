@@ -3,134 +3,192 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Restaurant Menu</title>
-<!-- Google font -->
+<title>Delicious Bistro Menu</title>
 <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;500;700&display=swap" rel="stylesheet">
+
 <style>
-  body {
+body {
     margin: 0;
     font-family: 'Montserrat', sans-serif;
-    color: #333;
-    background: #fff;
-  }
-  header {
-    background: url('https://images.unsplash.com/photo-1555992336-03a23c0e60f9?auto=format&fit=crop&w=1950&q=80') center/cover no-repeat;
-    height: 450px;
+    background: #f2f2f2;
+    color: #2b2b2b;
+}
+
+/* HERO */
+header {
+    background: linear-gradient(rgba(40,40,40,0.6), rgba(40,40,40,0.6)),
+    url('https://images.unsplash.com/photo-1555992336-03a23c0e60f9?auto=format&fit=crop&w=1950&q=80') center/cover no-repeat;
+    height: 420px;
     display: flex;
     align-items: center;
     justify-content: center;
     color: white;
-    text-shadow: 0 2px 8px rgba(0,0,0,0.6);
-  }
-  header h1 {
+    text-align: center;
+}
+header h1 {
     font-size: 3rem;
     letter-spacing: 2px;
-  }
-  .section {
+}
+header p {
+    font-weight: 300;
+    margin-top: 10px;
+}
+
+/* GENERAL SECTION */
+.section {
     padding: 60px 20px;
     max-width: 1100px;
     margin: auto;
-  }
-  .section h2 {
+}
+
+.section h2 {
     text-align: center;
-    font-size: 2.4rem;
-    margin-bottom: 20px;
-    position: relative;
-  }
-  .dish {
+    font-size: 2.2rem;
+    margin-bottom: 10px;
+}
+
+.section .subtitle {
+    text-align: center;
+    color: #666;
+    margin-bottom: 40px;
+}
+
+/* MENU CARD STYLE */
+.menu-card {
+    background: white;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+}
+
+.dish {
     display: flex;
     justify-content: space-between;
-    border-bottom: 1px solid #eee;
     padding: 12px 0;
-    font-size: 1rem;
-  }
-  .dish .name {
-    font-weight: 500;
-  }
-  .dish .price {
-    font-weight: 700;
-  }
-  .category-desc {
-    text-align: center;
-    color: #555;
-    font-size: 0.95rem;
-    margin-bottom: 30px;
-  }
-  .photos {
+    border-bottom: 1px solid #eee;
+}
+.dish:last-child { border-bottom: none; }
+
+.name { font-weight: 500; }
+.price { font-weight: 700; color: #444; }
+
+/* PHOTO GRID */
+.photos {
     display: grid;
     grid-template-columns: repeat(auto-fit,minmax(180px,1fr));
     gap: 12px;
-    margin-top: 30px;
-  }
-  .photos img {
+    margin-top: 25px;
+}
+.photos img {
     width: 100%;
-    border-radius: 8px;
-    object-fit: cover;
     height: 130px;
-  }
-  footer {
+    object-fit: cover;
+    border-radius: 8px;
+}
+
+/* ABOUT SECTION */
+.about {
+    background: #e8e8e8;
     text-align: center;
-    padding: 18px;
-    font-size: 0.95rem;
-    color: #777;
-    background: #fafafa;
-  }
-  @media (max-width:600px){
-    header h1 { font-size:2.2rem; }
-  }
+    border-radius: 10px;
+    padding: 40px 25px;
+    line-height: 1.6;
+}
+
+/* INFO STRIP */
+.info-strip {
+    background: #2e2e2e;
+    color: #ddd;
+    padding: 35px 20px;
+    text-align: center;
+}
+.info-strip div {
+    margin: 8px 0;
+}
+
+/* FOOTER */
+footer {
+    text-align: center;
+    padding: 20px;
+    font-size: 0.9rem;
+    background: #dcdcdc;
+    color: #555;
+}
+
+@media(max-width:600px){
+    header h1 { font-size: 2.2rem; }
+}
 </style>
 </head>
 <body>
 
 <header>
-  <h1>Delicious Bistro</h1>
+    <div>
+        <h1>Delicious Bistro</h1>
+        <p>Fresh Ingredients • Cozy Atmosphere • Memorable Taste</p>
+    </div>
 </header>
 
-<section class="section" id="starters">
-  <h2>Starters</h2>
-  <p class="category-desc">Kick off your meal with light and fresh starters.</p>
-  <div class="dish"><span class="name">Bruschetta</span><span class="price">₹220</span></div>
-  <div class="dish"><span class="name">Calamari Fritti</span><span class="price">₹350</span></div>
-  <div class="dish"><span class="name">Garlic Parmesan Fries</span><span class="price">₹180</span></div>
-
-  <div class="photos">
-    <img src="https://images.unsplash.com/photo-1600891964599-f61ba0e24092?auto=format&fit=crop&w=800&q=80" alt="Bruschetta">
-    <img src="https://images.unsplash.com/photo-1568051243858-96812c19bed0?auto=format&fit=crop&w=800&q=80" alt="Calamari">
-    <img src="https://images.unsplash.com/photo-1552332386-f8dd00dc0f12?auto=format&fit=crop&w=800&q=80" alt="Fries">
-  </div>
+<section class="section">
+    <div class="about">
+        <h2>Welcome to Our Kitchen</h2>
+        <p>At Delicious Bistro, we combine traditional recipes with modern flavors. Every dish is crafted with care, using fresh and locally sourced ingredients to give you a memorable dining experience.</p>
+    </div>
 </section>
 
-<section class="section" id="mains" style="background:#f8f8f8;">
-  <h2>Main Courses</h2>
-  <p class="category-desc">Hearty mains crafted with flavor and love.</p>
-  <div class="dish"><span class="name">Grilled Chicken</span><span class="price">₹550</span></div>
-  <div class="dish"><span class="name">Penne Alfredo</span><span class="price">₹450</span></div>
-  <div class="dish"><span class="name">Veggie Burger</span><span class="price">₹380</span></div>
-
-  <div class="photos">
-    <img src="https://images.unsplash.com/photo-1606755962774-dcb87c36ff20?auto=format&fit=crop&w=800&q=80" alt="Grilled Chicken">
-    <img src="https://images.unsplash.com/photo-1601924582973-4bafd5d3ef3d?auto=format&fit=crop&w=800&q=80" alt="Penne Alfredo">
-    <img src="https://images.unsplash.com/photo-1550317138-10000687a72b?auto=format&fit=crop&w=800&q=80" alt="Veggie Burger">
-  </div>
+<section class="section">
+    <h2>Starters</h2>
+    <p class="subtitle">Light bites to begin your meal</p>
+    <div class="menu-card">
+        <div class="dish"><span class="name">Bruschetta</span><span class="price">₹220</span></div>
+        <div class="dish"><span class="name">Calamari Fritti</span><span class="price">₹350</span></div>
+        <div class="dish"><span class="name">Garlic Parmesan Fries</span><span class="price">₹180</span></div>
+    </div>
+    <div class="photos">
+        <img src="https://images.unsplash.com/photo-1600891964599-f61ba0e24092?auto=format&fit=crop&w=800&q=80">
+        <img src="https://images.unsplash.com/photo-1568051243858-96812c19bed0?auto=format&fit=crop&w=800&q=80">
+        <img src="https://images.unsplash.com/photo-1552332386-f8dd00dc0f12?auto=format&fit=crop&w=800&q=80">
+    </div>
 </section>
 
-<section class="section" id="desserts">
-  <h2>Desserts</h2>
-  <p class="category-desc">Sweet finales to complete your dining experience.</p>
-  <div class="dish"><span class="name">Tiramisu</span><span class="price">₹280</span></div>
-  <div class="dish"><span class="name">Chocolate Brownie</span><span class="price">₹260</span></div>
-  <div class="dish"><span class="name">Gelato Trio</span><span class="price">₹300</span></div>
+<section class="section">
+    <h2>Main Courses</h2>
+    <p class="subtitle">Hearty and satisfying dishes</p>
+    <div class="menu-card">
+        <div class="dish"><span class="name">Grilled Chicken</span><span class="price">₹550</span></div>
+        <div class="dish"><span class="name">Penne Alfredo</span><span class="price">₹450</span></div>
+        <div class="dish"><span class="name">Veggie Burger</span><span class="price">₹380</span></div>
+    </div>
+    <div class="photos">
+        <img src="https://images.unsplash.com/photo-1606755962774-dcb87c36ff20?auto=format&fit=crop&w=800&q=80">
+        <img src="https://images.unsplash.com/photo-1601924582973-4bafd5d3ef3d?auto=format&fit=crop&w=800&q=80">
+        <img src="https://images.unsplash.com/photo-1550317138-10000687a72b?auto=format&fit=crop&w=800&q=80">
+    </div>
+</section>
 
-  <div class="photos">
-    <img src="https://images.unsplash.com/photo-1589710757056-1668f48a61a5?auto=format&fit=crop&w=800&q=80" alt="Tiramisu">
-    <img src="https://images.unsplash.com/photo-1600418175995-1d28c88e87d0?auto=format&fit=crop&w=800&q=80" alt="Brownie">
-    <img src="https://images.unsplash.com/photo-1563805042-7684f4a3d26f?auto=format&fit=crop&w=800&q=80" alt="Gelato">
-  </div>
+<section class="section">
+    <h2>Desserts</h2>
+    <p class="subtitle">Sweet endings</p>
+    <div class="menu-card">
+        <div class="dish"><span class="name">Tiramisu</span><span class="price">₹280</span></div>
+        <div class="dish"><span class="name">Chocolate Brownie</span><span class="price">₹260</span></div>
+        <div class="dish"><span class="name">Gelato Trio</span><span class="price">₹300</span></div>
+    </div>
+    <div class="photos">
+        <img src="https://images.unsplash.com/photo-1589710757056-1668f48a61a5?auto=format&fit=crop&w=800&q=80">
+        <img src="https://images.unsplash.com/photo-1600418175995-1d28c88e87d0?auto=format&fit=crop&w=800&q=80">
+        <img src="https://images.unsplash.com/photo-1563805042-7684f4a3d26f?auto=format&fit=crop&w=800&q=80">
+    </div>
+</section>
+
+<section class="info-strip">
+    <div><strong>📍 Location:</strong> MG Road, City Center</div>
+    <div><strong>🕒 Opening Hours:</strong> 11:00 AM – 10:00 PM</div>
+    <div><strong>📞 Contact:</strong> +91 12345 67890</div>
 </section>
 
 <footer>
-  © 2026 Delicious Bistro – Menu & Prices<br>
-  Contact: +91 12345 67890 | Open: 11:00 AM – 10:00 PM
+    © 2026 Delicious Bistro • Crafted with care
 </footer>
 
 </body>
