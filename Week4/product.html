@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Cartify | Product Details</title>
+
+<link rel="stylesheet" href="style.css">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+
+<!-- Navigation -->
+<header>
+    <nav class="navbar">
+        <div class="logo">Cartify</div>
+        <div class="cart">🛒 Cart</div>
+    </nav>
+</header>
+
+<!-- PRODUCT SECTION -->
+<section class="product-page">
+
+    <div class="product-container">
+
+        <!-- LEFT: IMAGE -->
+        <div class="product-gallery">
+            <img id="productImage" class="main-image">
+        </div>
+
+        <!-- RIGHT: DETAILS -->
+        <div class="product-details">
+
+            <h1 id="productTitle"></h1>
+
+            <div class="product-price" id="productPrice"></div>
+
+            <p class="product-description" id="productDescription"></p>
+
+            <div class="quantity-section">
+                <label>Quantity</label>
+                <input type="number" value="1" min="1">
+            </div>
+
+            <button class="add-to-cart-btn">
+                Add to Cart
+            </button>
+
+            <div class="trust-text">
+                ✔ Secure Checkout <br>
+                ✔ Fast Shipping <br>
+                ✔ 30-Day Return Guarantee
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+<!-- SIMILAR PRODUCTS -->
+<section class="related-section">
+
+    <div class="section-header">
+        <h2>You may also like</h2>
+        <p>Customers who viewed this item also viewed</p>
+    </div>
+
+    <div class="product-grid">
+
+        <a class="product-card" href="product.html?id=2">
+            <div class="product-image">
+                <img src="https://images.unsplash.com/photo-1523275335684-37898b6baf30">
+            </div>
+            <div class="product-info">
+                <h3>Premium Watch</h3>
+                <p class="product-price">$249</p>
+            </div>
+        </a>
+
+        <a class="product-card" href="product.html?id=3">
+            <div class="product-image">
+                <img src="https://images.unsplash.com/photo-1526170375885-4d8ecf77b99f">
+            </div>
+            <div class="product-info">
+                <h3>Camera Lens</h3>
+                <p class="product-price">$499</p>
+            </div>
+        </a>
+
+    </div>
+
+</section>
+
+<footer class="footer">
+    <p>© 2026 Cartify. All rights reserved.</p>
+</footer>
+
+<script>
+const products = {
+    1: {
+        title: "Smartphone Pro",
+        price: "$699",
+        image: "https://images.unsplash.com/photo-1511707171634-5f897ff02aa9",
+        description: "Experience next-level performance with our flagship device featuring an OLED display, advanced camera system, and ultra-fast processor built for professionals."
+    },
+    2: {
+        title: "Premium Watch",
+        price: "$249",
+        image: "https://images.unsplash.com/photo-1523275335684-37898b6baf30",
+        description: "Crafted with precision stainless steel and timeless design. Built for durability and everyday elegance."
+    },
+    3: {
+        title: "Camera Lens",
+        price: "$499",
+        image: "https://images.unsplash.com/photo-1526170375885-4d8ecf77b99f",
+        description: "Professional-grade optics delivering crystal-clear sharpness and outstanding low-light performance."
+    }
+};
+
+const params = new URLSearchParams(window.location.search);
+const id = params.get("id");
+
+if(products[id]){
+    document.getElementById("productTitle").innerText = products[id].title;
+    document.getElementById("productPrice").innerText = products[id].price;
+    document.getElementById("productImage").src = products[id].image;
+    document.getElementById("productDescription").innerText = products[id].description;
+}
+</script>
+
+</body>
+</html>
