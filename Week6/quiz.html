@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Quiz App</title>
+
+  <!-- Google Font -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: "Poppins", sans-serif;
+    }
+
+    body {
+      background: linear-gradient(135deg, #667eea, #764ba2);
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .quiz-container {
+      background: rgba(255, 255, 255, 0.15);
+      backdrop-filter: blur(12px);
+      padding: 30px;
+      width: 380px;
+      border-radius: 15px;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+      text-align: center;
+      color: #fff;
+      animation: fadeIn 0.6s ease;
+    }
+
+    h2 {
+      margin-bottom: 20px;
+      font-weight: 600;
+    }
+
+    .option {
+      display: block;
+      background: rgba(255,255,255,0.2);
+      margin: 10px 0;
+      padding: 12px;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+
+    .option:hover {
+      background: rgba(255,255,255,0.35);
+      transform: scale(1.02);
+    }
+
+    .selected {
+      background: #00c6ff;
+      color: #000;
+      font-weight: 500;
+    }
+
+    button {
+      margin-top: 20px;
+      padding: 12px;
+      width: 100%;
+      border: none;
+      background: #00c6ff;
+      color: #000;
+      font-weight: 600;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+
+    button:hover {
+      background: #00a8d6;
+      transform: translateY(-2px);
+    }
+
+    .result p {
+      margin: 10px 0;
+      font-size: 14px;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(15px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+  </style>
+</head>
+<body>
+
+<div class="quiz-container">
+  <h2 id="question">Question</h2>
+  <div id="options"></div>
+  <button id="nextBtn">Next</button>
+</div>
+
+<script>
+const quizData = [
+  {
+    question: "What is HTML?",
+    options: ["Programming Language", "Markup Language", "Database", "Operating System"],
+    correct: 1
+  },
+  {
+    question: "What does CSS do?",
+    options: ["Structure", "Style", "Logic", "Database"],
+    correct: 1
+  },
+  {
+    question: "Which is JavaScript used for?",
+    options: ["Styling", "Structure", "Interactivity", "Storage"],
+    correct: 2
+  },
+  {
+    question: "Which tag is used for links?",
+    options: ["<p>", "<a>", "<div>", "<h1>"],
+    correct: 1
+  },
+  {
+    question: "Which is a JS framework?",
+    options: ["React", "HTML", "CSS", "SQL"],
+    correct: 0
+  }
+];
+
+let currentQuestion = 0;
+let score = 0;
+let selected = null;
+
+const questionEl = document.getElementById("question");
+const optionsEl = document.getElementById("options");
+const nextBtn = document.getElementById("nextBtn");
+
+function loadQuestion() {
+  selected = null;
+  const q = quizData[currentQuestion];
+  questionEl.innerText = q.question;
+  optionsEl.innerHTML = "";
+
+  q.options.forEach((opt, index) => {
+    const div = document.createElement("div");
+    div.innerText = opt;
+    div.classList.add("option");
+
+    div.onclick = () => {
+      document.querySelectorAll(".option").forEach(o => o.classList.remove("selected"));
+      div.classList.add("selected");
+      selected = index;
+    };
+
+    optionsEl.appendChild(div);
+  });
+}
+
+nextBtn.onclick = () => {
+  if (selected === null) return;
+
+  if (selected === quizData[currentQuestion].correct) {
+    score++;
+  }
+
+  currentQuestion++;
+
+  if (currentQuestion < quizData.length) {
+    loadQuestion();
+  } else {
+    showResult();
+  }
+};
+
+function showResult() {
+  let resultHTML = `<h2>Your Score: ${score}/${quizData.length}</h2><div class="result">`;
+
+  quizData.forEach((q) => {
+    resultHTML += `<p><b>${q.question}</b><br>
+    Correct: ${q.options[q.correct]}</p>`;
+  });
+
+  resultHTML += `</div><button onclick="location.reload()">Restart Quiz</button>`;
+
+  document.querySelector(".quiz-container").innerHTML = resultHTML;
+}
+
+loadQuestion();
+</script>
+
+</body>
+</html>
