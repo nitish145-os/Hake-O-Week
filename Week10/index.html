@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Web Development Bootcamp</title>
+
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: "Poppins", sans-serif;
+      scroll-behavior: smooth;
+    }
+
+    body {
+      background: #0f172a;
+      color: #e2e8f0;
+    }
+
+    /* NAVBAR */
+    nav {
+      position: sticky;
+      top: 0;
+      background: #1e293b;
+      padding: 15px 40px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      z-index: 1000;
+    }
+
+    nav a {
+      color: #e2e8f0;
+      margin-left: 15px;
+      text-decoration: none;
+      font-size: 14px;
+    }
+
+    nav a:hover {
+      color: #38bdf8;
+    }
+
+    /* HERO */
+    .hero {
+  height: 90vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 20px;
+
+  /* Background Image */
+  background: 
+    linear-gradient(rgba(15, 23, 42, 0.75), rgba(15, 23, 42, 0.85)),
+    url("https://images.unsplash.com/photo-1523050854058-8df90110c9f1?w=1600");
+    
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+    .hero h1 {
+      font-size: 42px;
+      margin-bottom: 10px;
+    }
+
+    .hero p {
+      color: #94a3b8;
+      margin-bottom: 20px;
+    }
+
+    .btn {
+      padding: 12px 20px;
+      background: #38bdf8;
+      color: black;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+      font-weight: 500;
+    }
+
+    .btn:hover {
+      background: #0ea5e9;
+    }
+
+    /* SECTIONS */
+    section {
+      padding: 60px 40px;
+      text-align: center;
+    }
+
+    h2 {
+      margin-bottom: 20px;
+    }
+
+    /* FEATURES */
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 20px;
+    }
+
+    .card {
+      background: #1e293b;
+      padding: 20px;
+      border-radius: 10px;
+      transition: 0.3s;
+    }
+
+    .card:hover {
+      transform: translateY(-5px);
+    }
+
+    /* TESTIMONIALS */
+    .testimonial {
+      background: #1e293b;
+      padding: 15px;
+      border-radius: 8px;
+    }
+
+    /* CONTACT */
+    form {
+      max-width: 400px;
+      margin: auto;
+      display: flex;
+      flex-direction: column;
+    }
+
+    input, textarea {
+      margin: 8px 0;
+      padding: 10px;
+      border-radius: 5px;
+      border: none;
+    }
+
+    /* FOOTER */
+    footer {
+      text-align: center;
+      padding: 20px;
+      background: #1e293b;
+    }
+  </style>
+</head>
+
+<body>
+
+<!-- NAVBAR -->
+<nav>
+  <h3>SIT Nagpur</h3>
+  <div>
+    <a href="#about">About</a>
+    <a href="#features">Features</a>
+    <a href="#curriculum">Curriculum</a>
+    <a href="#contact">Contact</a>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div>
+    <h1>Web Development Bootcamp</h1>
+    <p>Learn to build modern websites from scratch at Symbiosis SIT Nagpur.</p>
+    <button class="btn">Enroll Now</button>
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section id="about">
+  <h2>About the Program</h2>
+  <p>
+    This bootcamp is designed to teach students the fundamentals of web development,
+    including front-end and modern frameworks. Conducted at Symbiosis SIT Nagpur,
+    the program focuses on practical learning and real-world projects.
+  </p>
+</section>
+
+<!-- FEATURES -->
+<section id="features">
+  <h2>Features</h2>
+  <div class="grid">
+    <div class="card">
+      <h3>Hands-on Projects</h3>
+      <p>Build real-world applications to strengthen your skills.</p>
+    </div>
+    <div class="card">
+      <h3>Industry Mentors</h3>
+      <p>Learn directly from professionals in the field.</p>
+    </div>
+    <div class="card">
+      <h3>Certification</h3>
+      <p>Receive a recognized certificate upon completion.</p>
+    </div>
+  </div>
+</section>
+
+<!-- CURRICULUM -->
+<section id="curriculum">
+  <h2>Curriculum</h2>
+  <div class="grid">
+    <div class="card">HTML Basics</div>
+    <div class="card">CSS Styling</div>
+    <div class="card">JavaScript</div>
+    <div class="card">React Basics</div>
+  </div>
+</section>
+
+<!-- TESTIMONIALS -->
+<section>
+  <h2>Student Reviews</h2>
+  <div class="grid">
+    <div class="testimonial">
+      <p>"Great learning experience with real projects!"</p>
+      <small>- Student A</small>
+    </div>
+    <div class="testimonial">
+      <p>"Mentors were very helpful and supportive."</p>
+      <small>- Student B</small>
+    </div>
+    <div class="testimonial">
+      <p>"Helped me understand web development clearly."</p>
+      <small>- Student C</small>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact">
+  <h2>Contact Us</h2>
+  <form>
+    <input type="text" placeholder="Name" required>
+    <input type="email" placeholder="Email" required>
+    <textarea placeholder="Message" rows="4"></textarea>
+    <button class="btn">Send Message</button>
+  </form>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <p>© 2026 Symbiosis SIT Nagpur</p>
+</footer>
+
+</body>
+</html>

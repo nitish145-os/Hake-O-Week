@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Image Gallery</title>
+
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500&display=swap" rel="stylesheet">
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: "Inter", sans-serif;
+    }
+
+    body {
+      background: #0f172a;
+      color: #e2e8f0;
+    }
+
+    h1 {
+      text-align: center;
+      padding: 20px;
+      font-weight: 500;
+    }
+
+    /* Gallery */
+    .gallery {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 12px;
+      padding: 15px;
+    }
+
+    .gallery img {
+      width: 100%;
+      height: 180px;
+      object-fit: cover;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: 0.25s ease;
+    }
+
+    /* Subtle hover (modern minimal) */
+    .gallery img:hover {
+      transform: scale(1.04);
+      filter: brightness(1.1);
+    }
+
+    /* Lightbox */
+    .lightbox {
+      position: fixed;
+      inset: 0;
+      background: rgba(15, 23, 42, 0.95);
+      display: none;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+    }
+
+    .lightbox img {
+      max-width: 85%;
+      max-height: 75%;
+      border-radius: 8px;
+      transition: 0.3s ease;
+    }
+
+    /* Controls */
+    .controls {
+      margin-top: 12px;
+    }
+
+    button {
+      padding: 8px 14px;
+      margin: 4px;
+      border: none;
+      border-radius: 6px;
+      background: #1e293b;
+      color: #e2e8f0;
+      cursor: pointer;
+      transition: 0.2s;
+    }
+
+    button:hover {
+      background: #334155;
+    }
+
+    /* Close button */
+    .close-btn {
+      position: absolute;
+      top: 15px;
+      right: 20px;
+      font-size: 26px;
+      cursor: pointer;
+      color: #e2e8f0;
+    }
+
+    /* Mobile */
+    @media(max-width: 500px) {
+      .gallery img {
+        height: 140px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+<h1>Image Gallery</h1>
+
+<div class="gallery" id="gallery"></div>
+
+<div class="lightbox" id="lightbox">
+  <span class="close-btn" onclick="closeBox()">×</span>
+  <img id="lightImg">
+  <div class="controls">
+    <button onclick="prev()">Prev</button>
+    <button onclick="next()">Next</button>
+  </div>
+</div>
+
+<script>
+const images = [
+  "https://images.unsplash.com/photo-1501785888041-af3ef285b470?w=1200",
+  "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=1200",
+  "https://images.unsplash.com/photo-1494526585095-c41746248156?w=1200",
+  "https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?w=1200",
+  "https://images.unsplash.com/photo-1441974231531-c6227db76b6e?w=1200"
+];
+
+let current = 0;
+
+const gallery = document.getElementById("gallery");
+const lightbox = document.getElementById("lightbox");
+const lightImg = document.getElementById("lightImg");
+
+images.forEach((src, i) => {
+  const img = document.createElement("img");
+  img.src = src;
+  img.onclick = () => openBox(i);
+  gallery.appendChild(img);
+});
+
+function openBox(i) {
+  current = i;
+  lightImg.src = images[i];
+  lightbox.style.display = "flex";
+}
+
+function closeBox() {
+  lightbox.style.display = "none";
+}
+
+function next() {
+  current = (current + 1) % images.length;
+  lightImg.src = images[current];
+}
+
+function prev() {
+  current = (current - 1 + images.length) % images.length;
+  lightImg.src = images[current];
+}
+
+document.addEventListener("keydown", e => {
+  if (lightbox.style.display === "flex") {
+    if (e.key === "ArrowRight") next();
+    if (e.key === "ArrowLeft") prev();
+    if (e.key === "Escape") closeBox();
+  }
+});
+</script>
+
+</body>
+</html>
